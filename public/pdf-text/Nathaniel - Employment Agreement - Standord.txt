@@ -1,0 +1,80 @@
+EMPLOYMENT AGREEMENT
+
+THIS EMPLOYMENT AGREEMENT (the "Agreement") is made and entered into as of January 15, 2023 (the "Effective Date"), by and between Standord Industries, Inc., a Delaware corporation (the "Company"), and Nathaniel Johnson (the "Employee").
+
+WITNESSETH:
+
+WHEREAS, the Company desires to employ the Employee on the terms and conditions set forth herein; and
+
+WHEREAS, the Employee desires to accept such employment on the terms and conditions set forth herein.
+
+NOW, THEREFORE, in consideration of the promises and mutual covenants contained herein and for other good and valuable consideration, the receipt and sufficiency of which are mutually acknowledged, the Company and the Employee hereby agree as follows:
+
+1. EMPLOYMENT AND DUTIES
+
+1.1. Employment. The Company hereby agrees to employ the Employee, and the Employee hereby agrees to serve the Company, on the terms and conditions set forth herein.
+
+1.2. Position and Duties. During the Employment Period (as defined below), the Employee shall serve as Senior Software Engineer, reporting directly to the Chief Technology Officer. The Employee shall have such duties and responsibilities as are consistent with such position and as may be assigned to the Employee by the Company from time to time. The Employee shall devote substantially all of his business time, attention, and energies to the performance of his duties hereunder.
+
+2. TERM OF EMPLOYMENT
+
+2.1. Employment Period. The term of the Employee's employment hereunder shall commence on the Effective Date and continue until terminated in accordance with Section 4 hereof (the "Employment Period").
+
+3. COMPENSATION AND BENEFITS
+
+3.1. Base Salary. During the Employment Period, the Employee shall receive an annual base salary of $135,000 (the "Base Salary"), payable in accordance with the Company's normal payroll practices.
+
+3.2. Annual Bonus. For each calendar year during the Employment Period, the Employee shall be eligible to earn an annual performance bonus with a target amount equal to 20% of his Base Salary (the "Annual Bonus"), based upon the achievement of individual and Company performance goals established by the Company. The Annual Bonus, if any, shall be paid at such time as bonuses are paid to other senior executives of the Company, but in no event later than March 15 of the calendar year following the calendar year to which such Annual Bonus relates.
+
+3.3. Employee Benefits. During the Employment Period, the Employee shall be entitled to participate in all employee benefit plans, practices, and programs maintained by the Company, as in effect from time to time, on a basis which is no less favorable than is provided to other similarly situated executives of the Company, to the extent consistent with applicable law and the terms of the applicable plans, practices, and programs.
+
+3.4. Vacation. During the Employment Period, the Employee shall be entitled to 15 days of paid vacation per calendar year, to be taken in accordance with the Company's vacation policies.
+
+4. TERMINATION OF EMPLOYMENT
+
+4.1. Termination Without Cause. The Company may terminate the Employee's employment hereunder without Cause (as defined below) at any time by giving the Employee written notice of such termination.
+
+4.2. Termination for Cause. The Company may terminate the Employee's employment hereunder for Cause at any time by giving the Employee written notice of such termination. For purposes of this Agreement, "Cause" shall mean: (i) the Employee's willful misconduct or gross negligence in the performance of his duties hereunder; (ii) the Employee's willful failure to substantially perform his duties hereunder; (iii) the Employee's commission of a felony or other crime involving moral turpitude; (iv) the Employee's willful violation of a material Company policy; or (v) the Employee's material breach of any material provision of this Agreement.
+
+4.3. Termination by the Employee. The Employee may terminate his employment hereunder at any time for any reason by giving the Company written notice of such termination at least five (5) days prior to the date of termination.
+
+5. SEVERANCE PAYMENTS
+
+5.1. Termination Without Cause. In the event the Employee's employment is terminated by the Company without Cause, the Employee shall be entitled to receive: (i) any accrued but unpaid Base Salary through the date of termination; (ii) continued payment of his Base Salary for a period of one (1) month following the date of termination; and (iii) any Annual Bonus earned but unpaid for the calendar year prior to the calendar year in which the termination occurs.
+
+6. CONFIDENTIALITY
+
+6.1. Confidential Information. The Employee acknowledges that in the course of his employment with the Company, he will have access to Confidential Information. "Confidential Information" means all data, information, methods, plans, formulas, processes, know-how, and trade secrets relating to the business, products, services, or customers of the Company or its affiliates, including but not limited to: (i) financial information; (ii) marketing and business plans; (iii) product development plans; (iv) customer lists and information; (v) personnel information; (vi) research and development data; and (vii) any other information of a similar nature disclosed to the Employee or otherwise made available to the Employee during the Employment Period.
+
+6.2. Non-Disclosure. The Employee agrees that during the Employment Period and at all times thereafter, he will hold in strictest confidence and not disclose or use any Confidential Information, except for the benefit of the Company in the course of his employment with the Company.
+
+7. INTELLECTUAL PROPERTY
+
+7.1. Work Product. The Employee acknowledges and agrees that all writings, works of authorship, technology, inventions, discoveries, ideas and other work product of any nature whatsoever that are created, prepared, produced, authored, edited, amended, conceived, or reduced to practice by the Employee, individually or jointly with others, during the period of his employment with the Company and relating in any way to the business or contemplated business, products, services, or activities of the Company (regardless of when or where the Work Product is prepared or whose equipment or other resources is used in preparing the same) (the "Work Product") belong exclusively to the Company.
+
+8. RESTRICTIVE COVENANTS
+
+8.1. Non-Solicitation. During the Employment Period and for a period of two (2) years thereafter, the Employee shall not, directly or indirectly, solicit or induce any employee, consultant, or contractor of the Company to terminate his or her employment or engagement with the Company.
+
+8.2. Non-Competition. During the Employment Period and for a period of three (3) years thereafter, the Employee shall not, directly or indirectly, engage in or have any interest in any entity, whether as a partner, shareholder, director, officer, employee, consultant, or otherwise, which is engaged in any business that is in competition with the business of the Company in any geographic area in which the Company does business.
+
+9. GENERAL PROVISIONS
+
+9.1. Governing Law. This Agreement shall be governed by and construed in accordance with the laws of the State of California, without giving effect to any choice of law or conflict of law provisions.
+
+9.2. Entire Agreement. This Agreement constitutes the entire agreement between the parties with respect to the subject matter hereof and supersedes all prior agreements and understandings, both written and oral, between the parties with respect to the subject matter hereof.
+
+9.3. Amendments and Waivers. This Agreement may not be modified, amended, or terminated except by an instrument in writing, signed by the Employee and a duly authorized officer of the Company. No waiver of any provision of this Agreement shall be effective unless in writing and signed by the party against whom such waiver is sought to be enforced.
+
+IN WITNESS WHEREOF, the parties hereto have executed this Agreement as of the date first above written.
+
+STANDORD INDUSTRIES, INC.
+
+By: _________________________
+Name: Sarah Chen
+Title: Chief Human Resources Officer
+
+EMPLOYEE
+
+_________________________
+Nathaniel Johnson 

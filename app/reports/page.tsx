@@ -1,20 +1,39 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { useRouter } from "next/navigation"
-import { Download, FileText, Search, Filter, ArrowUpDown } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { DashboardLayout } from "@/components/dashboard-layout"
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Download, FileText, Search, Filter, ArrowUpDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { DashboardLayout } from "@/components/dashboard-layout";
 
 export default function ReportsPage() {
-  const router = useRouter()
-  const [searchTerm, setSearchTerm] = useState("")
-  const [filterStatus, setFilterStatus] = useState("all")
+  const router = useRouter();
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filterStatus, setFilterStatus] = useState("all");
 
   // Sample reports data
   const reports = [
@@ -53,19 +72,21 @@ export default function ReportsPage() {
       score: 95,
       status: "Compliant",
     },
-  ]
+  ];
 
   // Filter reports based on search term and status filter
   const filteredReports = reports.filter((report) => {
-    const matchesSearch = report.name.toLowerCase().includes(searchTerm.toLowerCase())
+    const matchesSearch = report.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
     const matchesFilter =
       filterStatus === "all" ||
       (filterStatus === "compliant" && report.score >= 90) ||
       (filterStatus === "issues" && report.score < 90 && report.score >= 70) ||
-      (filterStatus === "critical" && report.score < 70)
+      (filterStatus === "critical" && report.score < 70);
 
-    return matchesSearch && matchesFilter
-  })
+    return matchesSearch && matchesFilter;
+  });
 
   return (
     <DashboardLayout>
@@ -77,7 +98,9 @@ export default function ReportsPage() {
         <Card>
           <CardHeader>
             <CardTitle>Compliance Reports</CardTitle>
-            <CardDescription>View and manage all your contract compliance reports</CardDescription>
+            <CardDescription>
+              View and manage all your contract compliance reports
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="flex flex-col md:flex-row gap-4 mb-6">
@@ -133,7 +156,13 @@ export default function ReportsPage() {
                         <TableCell>{report.date}</TableCell>
                         <TableCell>
                           <Badge
-                            variant={report.score >= 90 ? "default" : report.score >= 70 ? "outline" : "destructive"}
+                            variant={
+                              report.score >= 90
+                                ? "default"
+                                : report.score >= 70
+                                ? "outline"
+                                : "destructive"
+                            }
                           >
                             {report.score}%
                           </Badge>
@@ -144,8 +173,8 @@ export default function ReportsPage() {
                               report.status === "Compliant"
                                 ? "default"
                                 : report.status === "Issues Found"
-                                  ? "outline"
-                                  : "destructive"
+                                ? "outline"
+                                : "destructive"
                             }
                           >
                             {report.status}
@@ -153,7 +182,13 @@ export default function ReportsPage() {
                         </TableCell>
                         <TableCell className="text-right">
                           <div className="flex justify-end gap-2">
-                            <Button variant="ghost" size="sm" onClick={() => router.push(`/report?id=${report.id}`)}>
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              onClick={() =>
+                                router.push(`/report?sessionId=${report.id}`)
+                              }
+                            >
                               View
                             </Button>
                             <Button variant="ghost" size="sm">
@@ -165,7 +200,10 @@ export default function ReportsPage() {
                     ))
                   ) : (
                     <TableRow>
-                      <TableCell colSpan={5} className="text-center py-6 text-muted-foreground">
+                      <TableCell
+                        colSpan={5}
+                        className="text-center py-6 text-muted-foreground"
+                      >
                         No reports found matching your criteria
                       </TableCell>
                     </TableRow>
@@ -177,6 +215,5 @@ export default function ReportsPage() {
         </Card>
       </div>
     </DashboardLayout>
-  )
+  );
 }
-
