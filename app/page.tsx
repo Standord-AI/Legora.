@@ -10,7 +10,6 @@ export default function LandingPage() {
       <header className="border-b">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
-            <Shield className="h-6 w-6 text-primary" />
             <span className="text-xl font-bold flex items-center gap-2">
               <Image
                 src={"logo/logo_no_bg.png"}
@@ -18,7 +17,6 @@ export default function LandingPage() {
                 height={100}
                 width={200}
               />
-              Legora
             </span>
           </div>
           <div className="flex items-center gap-4">
@@ -57,11 +55,7 @@ export default function LandingPage() {
             </Link>
           </div>
           <div className="relative w-full max-w-4xl mt-8 rounded-lg overflow-hidden shadow-xl">
-            <img
-              src="/placeholder.svg?height=600&width=1200"
-              alt="Platform preview"
-              className="w-full h-auto border rounded-lg"
-            />
+            <Image src={'ss/Screenshot2.png'} alt="legora" height={1000} width={1000} />
           </div>
         </div>
       </section>
@@ -147,15 +141,13 @@ export default function LandingPage() {
       <footer className="border-t py-8 px-4 md:px-6">
         <div className="container flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2">
-            <Shield className="h-5 w-5 text-primary" />
             <span className="font-semibold flex items-center gap-2">
               <Image
-                src={"logo/logo_no_bg_white.png"}
+                src={"logo/logo_no_bg_small.png"}
                 alt="Legora logo"
-                height={100}
-                width={200}
+                height={50}
+                width={100}
               />
-              Legora
             </span>
           </div>
           <p className="text-sm text-muted-foreground">
