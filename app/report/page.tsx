@@ -417,9 +417,11 @@ export default function ReportPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <pre className="bg-muted p-4 rounded-md overflow-auto max-h-[500px] text-xs">
-                    {reportData.log_file || "No log data available"}
-                  </pre>
+                  <div className="overflow-auto max-w-full">
+                    <pre className="bg-muted p-4 rounded-md overflow-auto max-h-[500px] text-xs break-all whitespace-pre-wrap">
+                      {reportData.log_file || "No log data available"}
+                    </pre>
+                  </div>
                 </CardContent>
               </Card>
             </TabsContent>

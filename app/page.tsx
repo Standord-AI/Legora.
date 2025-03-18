@@ -1,6 +1,7 @@
-import Link from "next/link"
-import { ArrowRight, CheckCircle, Shield, FileText } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import Link from "next/link";
+import { ArrowRight, CheckCircle, Shield, FileText } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function LandingPage() {
   return (
@@ -10,7 +11,15 @@ export default function LandingPage() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Shield className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold">LegalComplianceAI</span>
+            <span className="text-xl font-bold flex items-center gap-2">
+              <Image
+                src={"logo/logo_no_bg.png"}
+                alt="Legora logo"
+                height={100}
+                width={200}
+              />
+              Legora
+            </span>
           </div>
           <div className="flex items-center gap-4">
             <Link href="/login">
@@ -28,10 +37,11 @@ export default function LandingPage() {
         <div className="container flex flex-col items-center text-center gap-8">
           <div className="space-y-4 max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-              AI-Powered Legal Compliance for Employment Contracts
+              Legora: AI-Powered Legal Compliance for Employment Contracts
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Ensure your employment contracts comply with current laws and regulations using our advanced AI system.
+              Ensure your employment contracts comply with current laws and
+              regulations using our advanced AI system.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
@@ -62,13 +72,17 @@ export default function LandingPage() {
           <div className="text-center space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold">Key Features</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Our AI-driven system automates legal compliance checks for employment contracts
+              Our AI-driven system automates legal compliance checks for
+              employment contracts
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="flex flex-col gap-2 p-6 border rounded-lg">
+              <div
+                key={index}
+                className="flex flex-col gap-2 p-6 border rounded-lg"
+              >
                 <div className="p-2 rounded-full bg-primary/10 w-fit">
                   <feature.icon className="h-6 w-6 text-primary" />
                 </div>
@@ -85,12 +99,17 @@ export default function LandingPage() {
         <div className="container space-y-16">
           <div className="text-center space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold">How It Works</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Simple process, powerful results</p>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Simple process, powerful results
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {steps.map((step, index) => (
-              <div key={index} className="flex flex-col items-center text-center gap-4">
+              <div
+                key={index}
+                className="flex flex-col items-center text-center gap-4"
+              >
                 <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-lg">
                   {index + 1}
                 </div>
@@ -107,9 +126,12 @@ export default function LandingPage() {
         <div className="container">
           <div className="flex flex-col items-center text-center gap-8 p-8 md:p-12 rounded-lg bg-primary text-primary-foreground">
             <div className="space-y-4 max-w-2xl">
-              <h2 className="text-3xl md:text-4xl font-bold">Ready to ensure compliance?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">
+                Ready to ensure compliance?
+              </h2>
               <p className="text-xl opacity-90">
-                Join thousands of companies using our AI to automate legal compliance checks.
+                Join thousands of companies using our AI to automate legal
+                compliance checks.
               </p>
             </div>
             <Link href="/signup">
@@ -126,23 +148,37 @@ export default function LandingPage() {
         <div className="container flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2">
             <Shield className="h-5 w-5 text-primary" />
-            <span className="font-semibold">LegalComplianceAI</span>
+            <span className="font-semibold flex items-center gap-2">
+              <Image
+                src={"logo/logo_no_bg_white.png"}
+                alt="Legora logo"
+                height={100}
+                width={200}
+              />
+              Legora
+            </span>
           </div>
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} LegalComplianceAI. All rights reserved.
+            © {new Date().getFullYear()} Legora. All rights reserved.
           </p>
           <div className="flex gap-4">
-            <Link href="/terms" className="text-sm text-muted-foreground hover:underline">
+            <Link
+              href="/terms"
+              className="text-sm text-muted-foreground hover:underline"
+            >
               Terms
             </Link>
-            <Link href="/privacy" className="text-sm text-muted-foreground hover:underline">
+            <Link
+              href="/privacy"
+              className="text-sm text-muted-foreground hover:underline"
+            >
               Privacy
             </Link>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
 
 const features = [
@@ -155,42 +191,49 @@ const features = [
   {
     icon: FileText,
     title: "Compliance Reports",
-    description: "Receive detailed reports highlighting potential risks and suggested corrective actions.",
+    description:
+      "Receive detailed reports highlighting potential risks and suggested corrective actions.",
   },
   {
     icon: Shield,
     title: "Legal Database Integration",
-    description: "Access a comprehensive, continuously updated legal database reflecting the latest standards.",
+    description:
+      "Access a comprehensive, continuously updated legal database reflecting the latest standards.",
   },
   {
     icon: CheckCircle,
     title: "Explainable AI",
-    description: "Understand the rationale behind compliance assessments with transparent explanations.",
+    description:
+      "Understand the rationale behind compliance assessments with transparent explanations.",
   },
   {
     icon: FileText,
     title: "Contract Templates",
-    description: "Access a library of legally compliant contract templates for various employment scenarios.",
+    description:
+      "Access a library of legally compliant contract templates for various employment scenarios.",
   },
   {
     icon: Shield,
     title: "Continuous Monitoring",
-    description: "Stay compliant as legal standards evolve with ongoing monitoring and updates.",
+    description:
+      "Stay compliant as legal standards evolve with ongoing monitoring and updates.",
   },
-]
+];
 
 const steps = [
   {
     title: "Upload Contract",
-    description: "Simply upload your employment contract PDF through our secure dashboard.",
+    description:
+      "Simply upload your employment contract PDF through our secure dashboard.",
   },
   {
     title: "AI Analysis",
-    description: "Our AI system analyzes the contract against current legal standards and regulations.",
+    description:
+      "Our AI system analyzes the contract against current legal standards and regulations.",
   },
   {
     title: "Review Results",
-    description: "Receive a detailed compliance report and chat with our AI to understand the findings.",
+    description:
+      "Receive a detailed compliance report and chat with our AI to understand the findings.",
   },
-]
-
+];

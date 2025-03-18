@@ -6,12 +6,40 @@ const MONGO_URI =
   "mongodb+srv://dunith20200471:cveJrDEdS7bYeFwk@fypcust0.abd2d.mongodb.net/";
 const MONGO_DB_NAME = "legal_analysis";
 
+/**
+ * Cleans Markdown text by removing code block delimiters if present
+ */
+function cleanMarkdownReport(report: string): string {
+  if (!report) return report;
+
+  // Remove opening markdown code block if present
+  let cleanedReport = report;
+
+  // Check for opening code block with or without language specifier
+  if (cleanedReport.startsWith("```markdown")) {
+    cleanedReport = cleanedReport.substring("```markdown".length);
+  } else if (cleanedReport.startsWith("```")) {
+    cleanedReport = cleanedReport.substring("```".length);
+  }
+
+  // Remove closing code block if present
+  if (cleanedReport.endsWith("```")) {
+    cleanedReport = cleanedReport.substring(0, cleanedReport.length - 3);
+  }
+
+  // Trim any extra whitespace created by the removal
+  cleanedReport = cleanedReport.trim();
+
+  return cleanedReport;
+}
+
 export async function GET(
   request: NextRequest,
   { params }: { params: { sessionId: string } }
 ) {
   try {
-    const sessionId = params.sessionId;
+    // In Next.js 13+, we need to access the sessionId properly
+    const { sessionId } = params;
     console.log("Fetching detailed report for session ID:", sessionId);
 
     let client;
@@ -35,6 +63,11 @@ export async function GET(
           { error: "Session not found" },
           { status: 404 }
         );
+      }
+
+      // Process the report to remove markdown code block delimiters if present
+      if (sessionData.report && typeof sessionData.report === "string") {
+        sessionData.report = cleanMarkdownReport(sessionData.report);
       }
 
       console.log("MongoDB session data found:", {
