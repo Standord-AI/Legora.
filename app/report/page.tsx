@@ -8,6 +8,7 @@ import {
   CheckCircle,
   Info,
   ExternalLink,
+  FileText,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -26,6 +27,7 @@ import { DashboardLayout } from "@/components/dashboard-layout";
 import { ChatInterface } from "@/components/chat-interface";
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 interface ReportData {
   user_name: string;
@@ -90,6 +92,22 @@ export default function ReportPage() {
         console.log("Report data received:", data);
         setReportData(data);
 
+        // Check if processing is still ongoing
+        if (data.status === "running" || data.status === "pending") {
+          // Show that analysis is still in progress
+          setError(null);
+          setIsLoading(false);
+
+          // Create a timer to refresh the page every 10 seconds
+          const refreshTimer = setInterval(() => {
+            console.log("Refreshing report page to check progress...");
+            window.location.reload();
+          }, 10000);
+
+          // Clean up timer if component unmounts
+          return () => clearInterval(refreshTimer);
+        }
+
         // Set filename and date
         if (data.pdf_path) {
           setFileName(data.pdf_path.split("/").pop() || "Unknown document");
@@ -144,7 +162,7 @@ export default function ReportPage() {
     );
   }
 
-  if (error || !reportData) {
+  if (error) {
     return (
       <DashboardLayout>
         <div className="flex-1 p-6">
@@ -156,7 +174,85 @@ export default function ReportPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <p>{error || "Failed to load report data"}</p>
+              <p>{error}</p>
+              <Button
+                className="mt-4"
+                onClick={() => router.push("/dashboard")}
+              >
+                Return to Dashboard
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </DashboardLayout>
+    );
+  }
+
+  // Show in-progress view if we have data but processing is ongoing
+  if (
+    reportData &&
+    (reportData.status === "running" || reportData.status === "pending")
+  ) {
+    return (
+      <DashboardLayout>
+        <div className="flex-1 p-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>Analysis in Progress</CardTitle>
+              <CardDescription>
+                Your document is still being analyzed
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="flex items-center justify-center py-8">
+                <div className="text-center space-y-4">
+                  <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary mx-auto"></div>
+                  <p className="text-lg">
+                    Your document is being analyzed in the background.
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    This page will automatically refresh when analysis is
+                    complete. This typically takes 3-5 minutes.
+                  </p>
+                </div>
+              </div>
+
+              {reportData.pdf_path && (
+                <Alert>
+                  <FileText className="h-4 w-4" />
+                  <AlertTitle>Document Details</AlertTitle>
+                  <AlertDescription>
+                    Analyzing: {reportData.pdf_path.split("/").pop()}
+                  </AlertDescription>
+                </Alert>
+              )}
+
+              <Button
+                className="w-full"
+                onClick={() => window.location.reload()}
+              >
+                Refresh Status
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </DashboardLayout>
+    );
+  }
+
+  if (!reportData) {
+    return (
+      <DashboardLayout>
+        <div className="flex-1 p-6">
+          <Card className="border-destructive">
+            <CardHeader>
+              <CardTitle>No Data Available</CardTitle>
+              <CardDescription>
+                We couldn't find any report data
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p>No report data could be found for the provided session ID.</p>
               <Button
                 className="mt-4"
                 onClick={() => router.push("/dashboard")}

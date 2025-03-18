@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -25,9 +25,14 @@ export function ProcessingModal({
   timeRemaining,
   fileName,
 }: ProcessingModalProps) {
+  // Always render the animation when modal is open
+  // No need for extra state here - simplify the logic
+
   // Prevent closing the modal by clicking outside or pressing escape
   useEffect(() => {
     if (isOpen) {
+      console.log("ProcessingModal is open");
+
       const handleBeforeUnload = (e: BeforeUnloadEvent) => {
         e.preventDefault();
         e.returnValue =
@@ -41,6 +46,9 @@ export function ProcessingModal({
       };
     }
   }, [isOpen]);
+
+  // Ensure progress is always at least 1 to show some movement
+  const displayProgress = progress < 1 ? 1 : progress;
 
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
@@ -59,9 +67,9 @@ export function ProcessingModal({
 
             <div className="flex justify-between text-sm">
               <span>Progress</span>
-              <span>{progress}%</span>
+              <span>{displayProgress.toFixed(1)}%</span>
             </div>
-            <Progress value={progress} className="h-2" />
+            <Progress value={displayProgress} className="h-2" />
 
             {timeRemaining && (
               <p className="text-xs text-muted-foreground mt-1 text-right">
@@ -70,12 +78,14 @@ export function ProcessingModal({
             )}
           </div>
 
-          <ProcessingAnimation />
+          {/* Always render the animation when modal is open */}
+          {isOpen && <ProcessingAnimation />}
 
           <div className="bg-muted p-3 rounded-md text-sm">
             <p>
               Please keep this window open while we analyze your document. This
-              process typically takes about 2 minutes.
+              process typically takes about 5 minutes for a comprehensive legal
+              analysis.
             </p>
           </div>
         </div>
