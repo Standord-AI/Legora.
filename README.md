@@ -1,4 +1,4 @@
-# Legal Document Analysis - Frontend
+# Legora - Frontend
 
 This is the **frontend** of the Legal Document Analysis system, built using **Next.js**. It provides an intuitive UI for users to submit legal documents for analysis, track job statuses, and view reports.
 
